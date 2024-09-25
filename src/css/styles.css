@@ -1,0 +1,126 @@
+.text-primary {
+    color: #295EDD !important;
+}
+
+.bg-blue {
+    background-color: #e6ebfc;
+}
+
+.notification-badge {
+    position: absolute;
+    top: 28px;
+    right: 18px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+#input-research {
+    box-shadow: 0.3px 1px 3px 0.5px rgba(197, 197, 197, 0.116);
+}
+
+.input-checkbox {
+    display: flex;
+    justify-content: space-between;
+    width: 13rem;
+}
+
+.input-checkbox:hover {
+    box-shadow: 0px 6px 5px rgba(214, 214, 214, 0.753);
+}
+
+.container-main {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 2fr;
+}
+
+.container-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.section-condition {
+    margin-right: 2.1rem;
+}
+
+.section-categories {
+    margin-left: 1.5rem;
+}
+
+.section-price {
+    margin-left: 4.5rem;
+}
+
+.section-mark, .section-price, .section-categories, .section-condition > p {
+    margin-right: 6rem;
+}
+
+input[type=checkbox] {
+    border: 1px solid black;
+}
+
+.input-price {
+    width: 4.5rem;
+}
+
+.container-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    gap: 1rem;
+    height: 50%;
+    margin: 3.5rem 0;
+    margin-right: 12rem;
+}
+
+.card {
+    padding: 1rem;
+    height: 95vh;
+}
+
+.card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .button {
+    visibility: visible;
+    box-shadow: 1px -10px 10px 5px white;
+}
+
+.card-text > .button {
+    visibility: hidden;
+    position: relative;
+    bottom: 8vh;
+    right: 1.35rem;
+    padding: 0.8rem;
+    width: 19vw;
+    background-color: #292cdd;
+    color: white;
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+}
+
+.valueDiscount {
+    text-decoration: line-through;
+}
+
+.discount {
+    color: green;
+}
+
+.price {
+    color: #008000;
+    font-size: xx-large;
+}
+
+.freeDelivery {
+    color: green;
+}
