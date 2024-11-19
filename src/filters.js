@@ -1,3 +1,5 @@
+import data from './data.js';
+
 const inputPromotion = document.getElementById('input-promotion');
 const inputFreeDelivery = document.getElementById('input-freeDelivery');
 const inputEvga = document.getElementById('input-evga');

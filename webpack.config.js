@@ -1,56 +1,65 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: 'production',
     entry: {
         main: './src/index.js',
-        styles: './src/css/styles.css',
         filters: './src/filters.js',
-        data: './src/data.js'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[path][name].[hash].[ext]',
-                            outputPath: './dist', // pasta de saída para as imagens
-                            publicPath: './src/img/', // caminho público para as imagens
-                        },
-                    },
-                    {
-                        loader: 'image-webpack-loader',
-                        options: {
-                            mozjpeg: {
-                                progressive: true,
-                                quality: 65,
-                            },
-                            pngquant: {
-                                quality: [0.65, 0.90],
-                                speed: 4,
-                            },
-                        },
-                    }
-                ]
-            }
-        ],
+        data: './src/data.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.js',
     },
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg|webp)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/[name].[hash][ext][query]',
+                },
+                use: [
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 75,
+                            },
+                            optipng: {
+                                enabled: true,
+                                optimizationLevel: 5,
+                            },
+                            pngquant: {
+                                quality: [0.65, 0.9],
+                                speed: 4,
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            webp: {
+                                quality: 70,
+                            },
+                        },
+                    },
+                ],
+            },
+        ],
+    },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+        }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
-            filename: 'index.html'
-        })
+            filename: 'index.html',
+        }),
     ],
 };

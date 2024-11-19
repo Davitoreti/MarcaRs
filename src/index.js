@@ -1,3 +1,6 @@
+import data from './data';
+import './css/styles.css';
+
 let containerImages = document.getElementById('container-images');
 
 function formatCurrency(value) {
