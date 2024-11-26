@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="index.js" defer></script>
-    <script src="data.js"></script>
-    <script src="filters.js" defer></script>
+    <script src="index.js" type="module" defer></script>
+    <script src="data.js" type="module" defer></script>
+    <script src="filters.js" type="module" defer></script>
     <title>MarcaRS</title>
 </head>
 
@@ -18,10 +18,10 @@
         <span class=" text-nowrap my-3 mx-1 fw-bold text-primary">My company</span>
         <div class="d-flex flex-column align-items-center input-group my-3">
             <div class="d-flex flex-column w-50">
-                <label class="py-1" for="input-product">Busque seu produto</label>
+                <label class="py-1">Busque seu produto</label>
                 <div class="d-flex input-group flex-nowrap align-baseline w-100 h-75">
                         <input type="text" id="input-research" class="form-control rounded-pill z-0" aria-describedby="input-research">
-                        <button class="input-group-text position-absolute end-0 rounded-5 h-100 bg-white p-2 z-1"><img src="img/icon-research.png" alt="icon research" onclick="research()"></button>
+                        <button class="input-group-text position-absolute end-0 rounded-5 h-100 bg-white p-2 z-1"></button>
                 </div>
             </div>
         </div>
@@ -47,37 +47,37 @@
                     <p>Marcas</p>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox"  id="input-evga">
-                        <label class="form-check-label" for="flexCheckDefault">
+                        <label class="form-check-label">
                           Evga
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="input-redragon">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <label class="form-check-label">
                           Redragon
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="input-hyperFury">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <label class="form-check-label">
                           Hyper fury
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="input-other">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <label class="form-check-label">
                           Other
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="input-msi">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <label class="form-check-label">
                           Msi
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox"  id="input-corsair">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <label class="form-check-label">
                           Corsair
                         </label>
                       </div>
@@ -86,13 +86,13 @@
                     <p>Condição</p>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox"  id="input-semi">
-                        <label class="form-check-label" for="flexCheckDefault">
+                        <label class="form-check-label">
                           Semi
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox"  id="input-new">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <label class="form-check-label">
                           New
                         </label>
                       </div>
@@ -101,25 +101,25 @@
                     <p>Categorias</p>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox"  id="input-videoCard">
-                        <label class="form-check-label" for="flexCheckDefault">
+                        <label class="form-check-label">
                           Placa de vídeo
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox"  id="input-keyboard">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <label class="form-check-label">
                           Teclado
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox"  id="input-headset">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <label class="form-check-label">
                           Headset
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="input-game">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <label class="form-check-label">
                           Jogo
                         </label>
                       </div>

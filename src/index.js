@@ -1,5 +1,16 @@
 import data from './data';
+import './filters';
 import './css/styles.css';
+import 'bootstrap/dist/css/bootstrap.min.css';;
+import iconResearch from './img/icon-research.png';
+import iconCaminhao from './img/caminhao-de-entrega.png'
+
+const button = document.querySelector('button');
+
+const imageElement = document.createElement('img');
+imageElement.src = iconResearch;
+imageElement.alt = 'icon research'
+button.appendChild(imageElement);
 
 let containerImages = document.getElementById('container-images');
 
@@ -10,14 +21,14 @@ function formatCurrency(value) {
         .replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 };
 
-function renderData(filteredData) {
+export function renderData(filteredData) {
     let results = "";
 
     for (let die of filteredData) {
         let valueDiscount = die.valueDiscount ? "R$ " + formatCurrency(die.price - (die.price * (die.discount / 100))) : "";
         let price = "R$ " + formatCurrency(die.price);
         let discount = die.discount > 0 ? die.discount + "%" : "";
-        let freeDelivery = die.freeDelivery ? "Entrega grátis <img src='./img/caminhao-de-entrega.png' alt=''>" : "";
+        let freeDelivery = die.freeDelivery ? `Entrega grátis <img src=${iconCaminhao} alt=''>` : "";
 
         results += `
             <div class="card">
@@ -81,3 +92,7 @@ function research() {
 
     containerImages.innerHTML = results;
 };
+
+document.getElementById('input-research').addEventListener('input', research);
+
+document.querySelector('button').addEventListener('click', research)

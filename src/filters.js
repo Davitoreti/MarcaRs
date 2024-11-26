@@ -1,4 +1,5 @@
-import data from './data.js';
+import  data  from './data.js';
+import { renderData } from './index.js';
 
 const inputPromotion = document.getElementById('input-promotion');
 const inputFreeDelivery = document.getElementById('input-freeDelivery');
@@ -68,3 +69,5 @@ checkboxes.forEach(checkbox => {
 
 inputPriceMin.addEventListener('input', filterData);
 inputPriceMax.addEventListener('input', filterData);
+
+export default './filters';

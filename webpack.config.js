@@ -1,22 +1,43 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     entry: {
         main: './src/index.js',
-        filters: './src/filters.js',
-        data: './src/data.js',
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+        usedExports: true,
+        splitChunks: {
+            chunks: 'all',
+            maxSize: 244000, 
+            cacheGroups: {
+              vendor: {
+                test: /[\\/]node_modules[\\/]/,
+                name: 'vendor',
+                chunks: 'all',
+              },
+            },
+          },
+    },
+    devServer: {
+        compress: true,
+        port: 9000,
+        open: true,
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js',
+        filename: '[name].[contenthash].bundle.js',
     },
     module: {
         rules: [
             {
-                test: /\.css$/i,
+                test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
@@ -24,32 +45,7 @@ module.exports = {
                 type: 'asset/resource',
                 generator: {
                     filename: 'assets/[name].[hash][ext][query]',
-                },
-                use: [
-                    {
-                        loader: 'image-webpack-loader',
-                        options: {
-                            mozjpeg: {
-                                progressive: true,
-                                quality: 75,
-                            },
-                            optipng: {
-                                enabled: true,
-                                optimizationLevel: 5,
-                            },
-                            pngquant: {
-                                quality: [0.65, 0.9],
-                                speed: 4,
-                            },
-                            gifsicle: {
-                                interlaced: false,
-                            },
-                            webp: {
-                                quality: 70,
-                            },
-                        },
-                    },
-                ],
+                }
             },
         ],
     },

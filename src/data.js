@@ -90,7 +90,7 @@ let data = [
         semi: false
     },
     {
-        img: require('./img/placa-video-ftw3.webp'),
+        img: require('./img/placa-video-ftw3.jpg'),
         title: "Product name A",
         price: 4500,
         valueDiscount: true,
@@ -100,7 +100,7 @@ let data = [
         semi: true
     },
     {
-        img: require('./img/placa-video-ftw3.webp'),
+        img: require('./img/placa-video-ftw3.jpg'),
         title: "Product name A",
         price: 4500,
         valueDiscount: false,
@@ -110,7 +110,7 @@ let data = [
         semi: true
     },
     {
-        img: require('./img/placa-video-ftw3.webp'),
+        img: require('./img/placa-video-ftw3.jpg'),
         title: "Product name A",
         price: 4500,
         valueDiscount: true,
@@ -120,7 +120,7 @@ let data = [
         semi: false
     },
     {
-        img: require('./img/placa-video-3090-msi.jpg'),
+        img: require('./img/placa-video-3090-msi.jpeg'),
         title: "3090 TI msi",
         price: 4499.99,
         valueDiscount: true,
@@ -130,7 +130,7 @@ let data = [
         semi: false
     },
     {
-        img: require('./img/placa-video-3090-msi.jpg'),
+        img: require('./img/placa-video-3090-msi.jpeg'),
         title: "3090 TI msi",
         price: 4550,
         valueDiscount: false,
@@ -140,7 +140,7 @@ let data = [
         semi: true
     },
     {
-        img: require('./img/placa-video-3090-msi.jpg'),
+        img: require('./img/placa-video-3090-msi.jpeg'),
         title: "3090 TI msi",
         price: 4500,
         valueDiscount: true,
